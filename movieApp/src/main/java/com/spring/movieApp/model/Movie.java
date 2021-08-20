@@ -42,7 +42,7 @@ public class Movie {
         this.writers = writers;
         this.genre = genre;
         this.actors = actors;
-        this.active = active;
+        this.active = true;
     }
 
     public Movie(String name, String director, String writers, List<Genre> genre, String actors) {
@@ -51,6 +51,7 @@ public class Movie {
         this.writers = writers;
         this.genre = genre;
         this.actors = actors;
+        this.active = true;
     }
 
     public Movie() {
@@ -94,5 +95,5 @@ public class Movie {
         this.actors = actors;
     }
     public boolean isActive() {return active;}
-    public void setActive(boolean active) {this.active = true;}
+    public void setActive(boolean active) {this.active = active;}
 }
