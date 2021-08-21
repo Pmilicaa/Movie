@@ -7,7 +7,7 @@ import "antd/dist/antd.css";
 function App() {
 
   const[movies,setMovies]=useState([]);
-
+  const[changedMovies,setChangedMovies]=useState([]);
   useEffect(()=>{
     const getMovies = async()=>{
       const getMoviesFromServer = await fetchMovies() 
@@ -23,10 +23,8 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header/>
-        <Movies movies={movies}/>
-      
-      
+        <Header movies={movies} setChangedMovies={setChangedMovies}/>
+        {changedMovies.length > 0 ? <Movies movies={changedMovies} /> : <Movies movies={movies}/>}
       </div>
     </Router>
   );
